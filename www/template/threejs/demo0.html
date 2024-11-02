@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>demo0</title>
+    <script src="/static/js/tools/jquery-1.12.4.min.js"></script>
+    <style type="text/css">
+        *,html,body{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>demo0</h1> -->
+
+</body>
+</html>
+<script type="text/javascript">
+    var THREEJS = null;
+</script>
+<!-- <script type="module">
+    import * as THREE from '/static/js/threejs/three/build/three.module.js';
+    let THREEJS = THREE;
+    import '/static/js/threejs/{{ handler.app }}.js?t={{ handler.time_now }}';  // 导入编译后的 CoffeeScript
+</script> -->
+<!-- <script type="module">
+    import * as THREE from "/static/js/threejs/three/build/three.module.js"
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setAnimationLoop( animate );
+    document.body.appendChild( renderer.domElement );
+
+    const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+    const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+    const cube = new THREE.Mesh( geometry, material );
+    scene.add( cube );
+
+    camera.position.z = 5;
+
+    function animate() {
+
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+
+        renderer.render( scene, camera );
+
+    }
+</script> -->
+<!-- <script type="module" src="/static/js/threejs/{{ handler.app }}.js?t={{ handler.time_now }}"></script> -->
+
+
+<script type="module">
+    import * as THREE from '/static/js/threejs/three/build/three.module.js';
+    THREEJS = THREE;
+</script>
+<script src="/static/js/threejs/{{ handler.app }}.js?t={{ handler.time_now }}"></script>
