@@ -10,11 +10,31 @@
             padding: 0;
             margin: 0;
         }
+        #play_btn{
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            color: black;
+            border-radius: 10px;
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+        }
+        #video{
+            width: 300px;
+            height: auto;
+            position: fixed;
+            right: 0px;
+            bottom: 40px;
+        }
     </style>
 </head>
 <body>
     <!-- <h1>demo0</h1> -->
-
+    <div id="container"></div>
+    <video id="video" muted crossOrigin="anonymous" controls playsinline style="display:unset;">
+        <source src="/static/video/02CloudIntro_V2.mp4">
+    </video>
+    <button id="play_btn">PLAY</button>
 </body>
 </html>
 <script type="text/javascript">
@@ -22,7 +42,9 @@
 </script>
 
 <script type="module">
-    import * as THREE from '/static/js/threejs/three/build/three.module.js';
+    // import * as THREE from '/static/js/threejs/three/build/three.module.js';
+    import * as THREE from '/static/js/threejs/three/build/three.webgpu.js';
+
     THREEJS = THREE;
 </script>
 <script src="/static/js/threejs/{{ handler.app }}.js?t={{ handler.time_now }}"></script>
