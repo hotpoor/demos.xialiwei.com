@@ -39,12 +39,16 @@
 </html>
 <script type="text/javascript">
     var THREEJS = null;
+    var VRButtonJS = null;
 </script>
 
 <script type="module">
     import * as THREE from '/static/js/threejs/three/build/three.module.js';
-    import {VRButton} from '/static/js/threejs/three/example/webxr/VRButton.js';
+    import {VRButton} from '/static/js/threejs/three/examples/jsm/webxr/VRButton.js';
 
+    console.log("THREE",THREE)
+    console.log("VRButton",VRButton)
     THREEJS = THREE;
+    VRButtonJS = VRButton;
 </script>
 <script src="/static/js/threejs/{{ handler.app }}.js?t={{ handler.time_now }}"></script>

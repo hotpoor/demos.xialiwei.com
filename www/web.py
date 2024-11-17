@@ -28,7 +28,12 @@ def make_app():
 async def main():
     tornado.options.parse_command_line()
     app = make_app()
-    app.listen(8888)
+    # app.listen(8888)
+    app.listen(443,
+    ssl_options={
+        "certfile": "../server.crt",
+        "keyfile": "../server.key",
+    })
     await asyncio.Event().wait()
 
 
